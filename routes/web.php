@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TasksController;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,6 @@ use App\Http\Controllers\TasksController;
 
 Route::get('/tasks', [\App\Http\Controllers\TasksController::class, 'index']);
 Route::post('/tasks', [TasksController::class, 'store'])->name('tasks.store');
+
+Route::resource('tasks', 'App\Http\Controllers\TasksController');
+

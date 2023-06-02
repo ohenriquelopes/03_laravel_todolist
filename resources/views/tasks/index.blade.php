@@ -21,4 +21,15 @@
         @endforeach
     </ul>
 
+    @foreach($tasks as $task)
+        <li>
+            {{ $task->title }}
+            <form action="{{ route('tasks.destroy', $task->id) }}" method="post" style="display: inline">
+            @csrf
+            @method('delete')
+            <button type="submit">Excluir</button>
+            </form>
+        </li>
+    @endforeach
+
 </x-layout>

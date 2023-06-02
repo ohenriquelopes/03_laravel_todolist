@@ -34,4 +34,12 @@ class TasksController extends Controller
 
         return redirect('/tasks');
     }
+
+    public function destroy($id): \Illuminate\Http\RedirectResponse
+    {
+//        Task::destroy($id);
+        $task = Task::findOrFail($id);
+        $task->delete();
+        return redirect()->route('tasks.index')->with('sucess', 'Registro excluido com sucesso');
+    }
 }
