@@ -10,7 +10,7 @@
         @csrf
         <div>
             <label title="title">Titulo da Tarefa</label>
-            <input type="text" name="title" id="title">
+            <label for="title"><input type="text" name="title" id="title"></label>
         </div>
         <button type="submit">Adicionar Tarefa</button>
     </form>
