@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Task;
 
 class TasksController extends Controller
 {
@@ -31,8 +32,8 @@ class TasksController extends Controller
             'title' => 'required',
         ]);
 
-        Task:create([
-            'title' =>  $request->input('title'),
+        Task::create([
+            'title' => $request->input('title'),
     ]);
         // salvar tarefa no banco ou local de armazenamento
 
