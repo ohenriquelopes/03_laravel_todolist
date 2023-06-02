@@ -17,7 +17,7 @@
 
     <ul>
         @foreach($tasks as $task)
-            <li> {{$task}} </li>
+            <li> {{$task->title}} </li>
         @endforeach
     </ul>
 

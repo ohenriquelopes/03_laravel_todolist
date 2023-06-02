@@ -12,12 +12,7 @@ class TasksController extends Controller
 //        $tasks = TasksController::all();
 //        return view('tasks.index', compact('tasks'));
 
-        $tasks = [
-            'Compras',
-            'Lavar roupa',
-            'Nao sei'
-        ];
-
+        $tasks = Task::all();
         return view('tasks.index')->with('tasks', $tasks);
     }
 
