@@ -23,5 +23,7 @@ use App\Http\Controllers;
 Route::get('/tasks', [\App\Http\Controllers\TasksController::class, 'index']);
 Route::post('/tasks', [TasksController::class, 'store'])->name('tasks.store');
 
-Route::resource('tasks', 'App\Http\Controllers\TasksController');
+Route::resource('tasks', 'App\Http\Controllers\TasksController'); #delete
 
+Route::get('/tasks/{id}/edit', 'App\Http\Controllers\TasksController@edit')->name('tasks.edit'); #edit
+Route::put('/tasks/{id}', 'App\Http\Controllers\TasksController@update')->name('tasks.update');
