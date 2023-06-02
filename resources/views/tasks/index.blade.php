@@ -29,6 +29,9 @@
             @method('delete')
             <button type="submit">Excluir</button>
             </form>
+            <form action="{{ route('tasks.edit', $task->id) }}" method="get" style="display: inline">
+                <button type="submit">Editar</button>
+            </form>
         </li>
     @endforeach
 
