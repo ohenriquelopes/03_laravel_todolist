@@ -19,4 +19,23 @@ class TasksController extends Controller
 
         return view('tasks.index')->with('tasks', $tasks);
     }
+
+    public function create()
+    {
+        return view('tasks.create');
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required',
+        ]);
+
+        Task:create([
+            'title' =>  $request->input('title'),
+    ]);
+        // salvar tarefa no banco ou local de armazenamento
+
+        return redirect('/tasks');
+    }
 }
