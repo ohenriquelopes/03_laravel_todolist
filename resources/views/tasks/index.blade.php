@@ -6,16 +6,16 @@
     <h1>Lista de Tarefas</h1>
 
 
-    <form action="{{ route('tasks.store') }}" method="post">
+    <form action="{{ route('tasks.store') }}" method="post" class="form-add-task">
         @csrf
-        <div>
+        <div class="form-group">
             <label title="title">Titulo da Tarefa</label>
-            <label for="title"><input type="text" name="title" id="title"></label>
+            <input type="text" name="title" id="title" class="form-control">
         </div>
-        <button type="submit">Adicionar Tarefa</button>
+        <button type="submit" class="btn btn-primary">Adicionar Tarefa</button>
     </form>
 
-    <ul>
+    <ul class="task-list">
         @foreach($tasks as $task)
             <li> {{$task->title}} </li>
         @endforeach
@@ -23,14 +23,14 @@
 
     @foreach($tasks as $task)
         <li>
-            {{ $task->title }}
+            <span class="task-list">{{ $task->title }}</span>
             <form action="{{ route('tasks.destroy', $task->id) }}" method="post" style="display: inline">
             @csrf
             @method('delete')
-            <button type="submit">Excluir</button>
+            <button type="submit" class="btn btn-danger">Excluir</button>
             </form>
             <form action="{{ route('tasks.edit', $task->id) }}" method="get" style="display: inline">
-                <button type="submit">Editar</button>
+                <button type="submit" class="btn btn-primary">Editar</button>
             </form>
         </li>
     @endforeach
