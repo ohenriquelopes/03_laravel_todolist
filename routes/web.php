@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 //    return view('home');
 //});
 
-Route::get('/tasks', [\App\Http\Controllers\TasksController::class, 'index']);
+
 Route::get('/tasks', [\App\Http\Controllers\TasksController::class, 'index']);
