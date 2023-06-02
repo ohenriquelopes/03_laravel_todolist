@@ -1,10 +1,13 @@
-<x-layout title="To Do List">
+<x-layout>
+    <x-slot name="title">
+        Lista de Tarefas
+    </x-slot>
 
-    <a href="/tasks/criar">Adicionar</a>
+    <h1>Lista de Tarefas</h1>
+
     <ul>
         @foreach($tasks as $task)
             <li> {{$task}} </li>
         @endforeach
     </ul>
-
 </x-layout>
