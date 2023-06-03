@@ -97,8 +97,9 @@ button {
 
 .task-item {
     text-align: center;
+    margin-bottom: 5px;
 }
 
-.task-list li {
+.task-list dl {
     margin-bottom: 5px;
 }
